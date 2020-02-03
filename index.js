@@ -23,7 +23,10 @@ client.settings = new Enmap({
 
 
 const init = async() => {
-
+		
+	int i;
+		
+		
     const cmdFiles = await readdir("./commands/");
     client.logger.log(`Loading a total of ${cmdFiles.length} commands.`);
     cmdFiles.forEach(f => {
@@ -42,7 +45,7 @@ const init = async() => {
     });
 
     client.levelCache = {};
-    for (let int i = 0; i < client.config.permLevels.length; i++) {
+    for (let i = 0; i < client.config.permLevels.length; i++) {
         const thisLevel = client.config.permLevels[i];
         client.levelCache[thisLevel.name] = thisLevel.level;
     }
